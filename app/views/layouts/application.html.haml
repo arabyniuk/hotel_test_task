@@ -1,0 +1,21 @@
+!!!
+%html
+  %head
+    %title HotelAdvisor
+    = stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true
+    = javascript_include_tag "application", "data-turbolinks-track" => true
+    = csrf_meta_tags
+  %body
+  .container
+
+    = render 'layouts/header'
+    - if notice
+      %div.alert.alert-success
+        %a.close{"data-dismiss" => "alert"} ×
+        = notice
+    - if alert
+      %div.alert.alert-danger
+        %a.close{"data-dismiss" => "alert"} ×
+        = alert
+
+    = yield

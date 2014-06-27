@@ -1,0 +1,27 @@
+%h1 Listing motels
+
+%table
+  %tr
+    %th Title
+    %th Rating
+    %th Breakfast
+    %th Description
+    %th Price
+    %th
+    %th
+    %th
+
+  - @motels.each do |motel|
+    %tr
+      %td= motel.title
+      %td= motel.rating
+      %td= motel.breakfast
+      %td= motel.description
+      %td= motel.price
+      %td= link_to 'Show', motel
+      %td= link_to 'Edit', edit_motel_path(motel)
+      %td= link_to 'Destroy', motel, :method => :delete, :data => { :confirm => 'Are you sure?' }
+
+%br
+
+= link_to 'New Motel', new_motel_path

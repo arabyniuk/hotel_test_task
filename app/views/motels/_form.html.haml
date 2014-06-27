@@ -1,0 +1,24 @@
+= simple_form_for(@motel) do |f|
+  = f.error_notification
+
+  .form-inputs
+    = f.input :title
+    = f.input :rating
+    = f.input :breakfast
+    = f.input :description
+    = f.input :price
+
+    = f.input :image, as: :file
+    
+    %br
+    %br
+    = f.simple_fields_for :address do |f|
+      = f.input :country
+      = f.input :state
+      = f.input :city
+      = f.input :street
+      
+    %br
+
+  .form-actions
+    = f.button :submit

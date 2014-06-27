@@ -1,0 +1,44 @@
+%p#notice= notice
+
+
+%p
+  = image_tag @motel.image_url(:thumb)
+%p
+  %b Title:
+  = @motel.title
+%p
+  %b Rating:
+  = @motel.rating
+%p
+  %b Breakfast:
+  = @motel.breakfast
+%p
+  %b Description:
+  = @motel.description
+%p
+  %b Price:
+  = @motel.price
+
+
+
+%p
+  %b Сountry:
+  = @motel.address.country
+
+%p
+  %b State:
+  = @motel.address.state
+
+%p
+  %b City:
+  = @motel.address.city
+
+%p
+  %b Street:
+  = @motel.address.street
+
+
+
+= link_to 'Edit', edit_motel_path(@motel)
+\|
+= link_to 'Back', motels_path
