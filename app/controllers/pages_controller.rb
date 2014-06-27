@@ -1,7 +1,7 @@
 class PagesController < ApplicationController
 
   def root
-		@hotels = Hotel.all
+	@motels = Motel.all
   end
 
 end

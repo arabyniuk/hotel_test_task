@@ -1,4 +1,12 @@
-.container
-  .row
-    - @hotels.each do |hotel|
-      = hotel.description
+- @motels.each do |motel| 
+  .col-sm-6.col-md-4
+    .thumbnail
+      = image_tag motel.image_url(:thumb)
+      .caption
+        %h3
+          = motel.title
+        %p
+          = motel.description
+        %p
+          = motel.price
+          = motel.rating

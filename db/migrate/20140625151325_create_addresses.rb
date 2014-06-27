@@ -6,7 +6,7 @@ class CreateAddresses < ActiveRecord::Migration
       t.string :city      
       t.string :street      
 
-      t.integer :hotel_id
+      t.integer :motel_id
       t.timestamps
     end
   end
