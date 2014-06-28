@@ -1,15 +1,8 @@
-# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
-one:
-  title: MyString
-  rating: 9.99
-  breakfast: false
-  description: MyText
-  price: 1.5
-
-two:
-  title: MyString
-  rating: 9.99
-  breakfast: false
-  description: MyText
-  price: 1.5
+<% 10.times do |n| %>
+item_<%= n %>:
+  title: <%= n % 2 == 0 ? 'Banana House' : 'Harmony resort' %>
+  rating: <%= n % 3 == 0 ? 5 : 4 %> 
+  price: <%= n % 3 == 0 ? 111 : 222 %> 
+  description: <%= n % 2 == 0 ? 'Samui Harmony Resort on Lamai Beach offers wooden  ' : 'built bungalows either by the seaside or canal and blend with Koh Samui nature and tropical' %>
+<% end %>

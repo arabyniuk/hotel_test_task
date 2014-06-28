@@ -13,3 +13,14 @@
  */
 
 @import "bootstrap";
+
+.padding-reset {
+	padding-left: 0;
+	padding-right: 0;
+}
+
+.controls {
+	> .radio.inline {
+		padding-right: 5px;
+	}
+}

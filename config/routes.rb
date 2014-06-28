@@ -1,5 +1,9 @@
 HotelAdvisor::Application.routes.draw do
-  resources :motels
+
+  resources :motels do
+    resources :rates
+    resources :comments
+  end
 
   devise_for :users
   # The priority is based upon order of creation: first created -> highest priority.
@@ -8,7 +12,6 @@ HotelAdvisor::Application.routes.draw do
   # You can have the root of your site routed with "root"
   root 'pages#root'
 
-  resources :hotels, :only => [:show, :new, :create] 
   resources :address
 
   # Example of regular route:

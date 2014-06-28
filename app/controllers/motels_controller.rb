@@ -1,5 +1,5 @@
 class MotelsController < ApplicationController
-  # before_filter :authenticate_user!, :except => [:show, :index]
+  before_filter :authenticate_user!
   before_action :set_motel, only: [:show, :edit, :update, :destroy]
 
   # GET /motels
@@ -11,6 +11,9 @@ class MotelsController < ApplicationController
   # GET /motels/1
   # GET /motels/1.json
   def show
+    @motel = Motel.find(params[:id])
+    @rate = Rate.new
+    @comment = Comment.new
   end
 
   # GET /motels/new

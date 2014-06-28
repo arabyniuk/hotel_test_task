@@ -11,13 +11,20 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140627155959) do
+ActiveRecord::Schema.define(version: 20140628175854) do
 
   create_table "addresses", force: true do |t|
     t.string   "country"
     t.string   "state"
     t.string   "city"
     t.string   "street"
+    t.integer  "motel_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "comments", force: true do |t|
+    t.text     "description"
     t.integer  "motel_id"
     t.datetime "created_at"
     t.datetime "updated_at"
@@ -33,6 +40,13 @@ ActiveRecord::Schema.define(version: 20140627155959) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "image"
+  end
+
+  create_table "rates", force: true do |t|
+    t.decimal  "value",      precision: 10, scale: 1
+    t.integer  "motel_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   create_table "users", force: true do |t|

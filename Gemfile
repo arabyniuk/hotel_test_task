@@ -6,6 +6,8 @@ gem 'protected_attributes'
 gem 'carrierwave'
 gem "rmagick"
 
+gem "debugger"
+
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.0.5'
@@ -47,6 +49,7 @@ gem "rspec-rails", :group => [:test, :development]
 group :test do
 	gem "factory_girl_rails"
 	gem "capybara"
+	gem 'selenium-webdriver'
 end
 
 # Use ActiveModel has_secure_password

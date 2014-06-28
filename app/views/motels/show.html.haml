@@ -1,41 +1,66 @@
-%p
-  = image_tag @motel.image_url(:thumb)
-%p
-  %b Title:
-  = @motel.title
-%p
-  %b Rating:
-  = @motel.rating
-%p
-  %b Breakfast:
-  = @motel.breakfast
-%p
-  %b Description:
-  = @motel.description
-%p
-  %b Price:
-  = @motel.price
+.form-inline
+  %p
+    - if @motel.image_url(:thumb)
+      = image_tag motel.image_url(:thumb)
+    - else
+      = image_tag('sample.jpg')
+  %p
+    %b Title:
+    = @motel.title
+  %p
+    %b Rating:
+    = @motel.rating
+  %p
+    %b Breakfast:
+    = @motel.breakfast
+  %p
+    %b Description:
+    = @motel.description
+  %p
+    %b Price:
+    = @motel.price
 
 
 
-%p
-  %b Сountry:
-  = @motel.address.country
+  %p
+    %b Сountry:
+    = @motel.address.country
 
-%p
-  %b State:
-  = @motel.address.state
+  %p
+    %b State:
+    = @motel.address.state
 
-%p
-  %b City:
-  = @motel.address.city
+  %p
+    %b City:
+    = @motel.address.city
 
-%p
-  %b Street:
-  = @motel.address.street
+  %p
+    %b Street:
+    = @motel.address.street
 
+  %hr
+  %br
 
+  = simple_form_for([@motel, @rate]) do |f|
+    = f.input :value, collection: 1..10, as: :radio_buttons, item_wrapper_class: 'inline'
+    %br
+    = f.button :submit
 
-= link_to 'Edit', edit_motel_path(@motel)
-\|
-= link_to 'Back', motels_path
+  %br
+  %hr
+  %h3 Leave your comment
+  = simple_form_for([@motel, @comment]) do |f|
+    = f.input :description
+    %br
+    = f.button :submit
+
+  %br
+  %hr
+
+  %h3 Comments
+
+  = render @motel.comments
+  %br
+  = link_to 'Edit', edit_motel_path(@motel)
+  \|
+  = link_to 'Back', motels_path
