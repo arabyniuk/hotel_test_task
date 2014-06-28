@@ -5,5 +5,9 @@ class Motel < ActiveRecord::Base
 	belongs_to :user
 	has_one :address
   	accepts_nested_attributes_for :address
+  	validates :title, presence: true
+  	validates :rating, presence: true
+  	validates :title, length: { minimum: 5}
+
 	mount_uploader :image, ImageUploader
 end

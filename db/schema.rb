@@ -11,29 +11,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140627165248) do
+ActiveRecord::Schema.define(version: 20140627155959) do
 
   create_table "addresses", force: true do |t|
     t.string   "country"
     t.string   "state"
     t.string   "city"
     t.string   "street"
-    t.integer  "hotel_id"
-    t.datetime "created_at"
-    t.datetime "updated_at"
     t.integer  "motel_id"
-  end
-
-  create_table "hotels", force: true do |t|
-    t.string   "title"
-    t.decimal  "rating",      precision: 5, scale: 1
-    t.boolean  "breakfast"
-    t.text     "description"
-    t.float    "price"
-    t.integer  "user_id"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.string   "image"
   end
 
   create_table "motels", force: true do |t|
@@ -46,12 +33,6 @@ ActiveRecord::Schema.define(version: 20140627165248) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "image"
-  end
-
-  create_table "tests", force: true do |t|
-    t.string   "title"
-    t.datetime "created_at"
-    t.datetime "updated_at"
   end
 
   create_table "users", force: true do |t|
