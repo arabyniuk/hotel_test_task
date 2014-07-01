@@ -1,8 +1,8 @@
 require 'spec_helper'
 
 
-RSpec.describe Comment do
+RSpec.describe Address do
 
   it { should belong_to(:motel) }
-  
+
 end

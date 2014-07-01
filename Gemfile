@@ -45,8 +45,10 @@ group :doc do
   gem 'sdoc', require: false
 end
 
-gem "rspec-rails", :group => [:test, :development]
+
 group :test do
+  gem 'rspec-rails', '~> 2.14.0'
+  gem 'shoulda-matchers', '~> 2.4.0'
 	gem "factory_girl_rails"
 	gem "capybara"
 	gem 'selenium-webdriver'

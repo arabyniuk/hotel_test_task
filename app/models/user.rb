@@ -4,12 +4,12 @@ class User < ActiveRecord::Base
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
 
-  has_many :hotels
+  has_many :motels
 
   attr_accessible :email, :password, :password_confirmation
 
   # def to_s
   #   "#{fname} #{lname}"
   # end
-	
+
 end
